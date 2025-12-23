@@ -52,8 +52,15 @@ DOMAIN-SUFFIX,kjfgsjghslirvnslkrf.com
 DOMAIN-SUFFIX,jinaos.com
 DOMAIN-SUFFIX,tycyule887tycyl.com
 DOMAIN-SUFFIX,dhorywoczwec.com
+# newsnow docker
+DOMAIN-SUFFIX,busiyi.world
 
 #EXAMPLE
-#DOMAIN-KEYWORD,KEYWORD
-#IP-CIDR,xxx.xxx.xxx.xxx/32,no-resolve
-#IP-CIDR,xxx.xxx.xxx.0/24,no-resolve
+#DOMAIN-SUFFIX,google.com
+#DOMAIN-KEYWORD,google
+#DOMAIN,ad.com
+#SRC-IP-CIDR,192.168.1.201/32
+#IP-CIDR,127.0.0.0/8,no-resolve
+#GEOIP,CN
+#DST-PORT,80
+#SRC-PORT,7777
