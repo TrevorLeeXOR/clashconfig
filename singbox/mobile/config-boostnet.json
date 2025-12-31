@@ -1,0 +1,1164 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "local",
+        "type": "udp",
+        "server": "192.168.31.1"
+      },
+      {
+        "tag": "public",
+        "type": "https",
+        "server": "dns.alidns.com",
+        "domain_resolver": "local"
+      },
+      {
+        "tag": "foreign",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🚀 默认代理"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "clash_mode": "direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "global",
+        "server": "fakeip"
+      },
+      {
+        "query_type": "HTTPS",
+        "action": "reject"
+      },
+      {
+        "rule_set": "geosite-fakeipfilter",
+        "server": "local"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local"
+      }
+    ],
+    "final": "foreign",
+    "client_subnet": "223.5.5.0/24",
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {
+      "tag": "🚀 默认代理",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🧠 AI",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "📹 YouTube",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🍀 Google",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "👨‍💻 Github",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "📲 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎵 TikTok",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎥 Netflix",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "💶 PayPal",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎮 Steam",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🪟 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🐬 OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🍏 Apple",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🐠 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🇭🇰 香港手动",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06",
+        "🇭🇰 香港07",
+        "🇭🇰 香港08",
+        "🇭🇰 香港09",
+        "🇭🇰 香港010",
+        "🇭🇰 香港011",
+        "🇭🇰 香港012",
+        "🇭🇰 香港013",
+        "🇭🇰 香港014",
+        "🇭🇰 香港015",
+        "🇭🇰 香港016"
+      ]
+    },
+    {
+      "tag": "🇯🇵 日本手动",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本01",
+        "🇯🇵 日本02",
+        "🇯🇵 日本03",
+        "🇯🇵 日本04",
+        "🇯🇵 日本05",
+        "🇯🇵 日本06",
+        "🇯🇵 日本07",
+        "🇯🇵 日本08"
+      ]
+    },
+    {
+      "tag": "🇸🇬 狮城手动",
+      "type": "selector",
+      "outbounds": [
+        "🇸🇬 新加坡01",
+        "🇸🇬 新加坡02",
+        "🇸🇬 新加坡03",
+        "🇸🇬 新加坡04",
+        "🇸🇬 新加坡05",
+        "🇸🇬 新加坡06",
+        "🇸🇬 新加坡07",
+        "🇸🇬 新加坡08"
+      ]
+    },
+    {
+      "tag": "🇺🇲 美国手动",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸 美国01",
+        "🇺🇸 美国02",
+        "🇺🇸 美国03",
+        "🇺🇸 美国04"
+      ]
+    },
+    {
+      "tag": "🐸 手动选择",
+      "type": "selector",
+      "outbounds": [
+        "boostqz.com",
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06",
+        "🇭🇰 香港07",
+        "🇭🇰 香港08",
+        "🇯🇵 日本01",
+        "🇯🇵 日本02",
+        "🇯🇵 日本03",
+        "🇯🇵 日本04",
+        "🇯🇵 日本05",
+        "🇯🇵 日本06",
+        "🇯🇵 日本07",
+        "🇯🇵 日本08",
+        "🇹🇼 台湾01",
+        "🇹🇼 台湾02",
+        "🇹🇼 台湾03",
+        "🇹🇼 台湾04",
+        "🇸🇬 新加坡01",
+        "🇸🇬 新加坡02",
+        "🇸🇬 新加坡03",
+        "🇸🇬 新加坡04",
+        "🇸🇬 新加坡05",
+        "🇸🇬 新加坡06",
+        "🇸🇬 新加坡07",
+        "🇸🇬 新加坡08",
+        "🇺🇸 美国01",
+        "🇺🇸 美国02",
+        "🇺🇸 美国03",
+        "🇺🇸 美国04",
+        "🇭🇰 香港09",
+        "🇭🇰 香港010",
+        "🇭🇰 香港011",
+        "🇭🇰 香港012",
+        "🇭🇰 香港013",
+        "🇭🇰 香港014",
+        "🇭🇰 香港015",
+        "🇭🇰 香港016",
+        "🇬🇧 英国-3x倍率",
+        "🇲🇾 马来西亚-3x倍率",
+        "🇹🇷 土耳其-5x倍率",
+        "🇦🇷 阿根廷-5x倍率",
+        "🇦🇺 澳洲-3x倍率"
+      ]
+    },
+    {
+      "tag": "♻️ 自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "boostqz.com",
+        "🇭🇰 香港01",
+        "🇭🇰 香港02",
+        "🇭🇰 香港03",
+        "🇭🇰 香港04",
+        "🇭🇰 香港05",
+        "🇭🇰 香港06",
+        "🇭🇰 香港07",
+        "🇭🇰 香港08",
+        "🇯🇵 日本01",
+        "🇯🇵 日本02",
+        "🇯🇵 日本03",
+        "🇯🇵 日本04",
+        "🇯🇵 日本05",
+        "🇯🇵 日本06",
+        "🇯🇵 日本07",
+        "🇯🇵 日本08",
+        "🇹🇼 台湾01",
+        "🇹🇼 台湾02",
+        "🇹🇼 台湾03",
+        "🇹🇼 台湾04",
+        "🇸🇬 新加坡01",
+        "🇸🇬 新加坡02",
+        "🇸🇬 新加坡03",
+        "🇸🇬 新加坡04",
+        "🇸🇬 新加坡05",
+        "🇸🇬 新加坡06",
+        "🇸🇬 新加坡07",
+        "🇸🇬 新加坡08",
+        "🇺🇸 美国01",
+        "🇺🇸 美国02",
+        "🇺🇸 美国03",
+        "🇺🇸 美国04",
+        "🇭🇰 香港09",
+        "🇭🇰 香港010",
+        "🇭🇰 香港011",
+        "🇭🇰 香港012",
+        "🇭🇰 香港013",
+        "🇭🇰 香港014",
+        "🇭🇰 香港015",
+        "🇭🇰 香港016",
+        "🇬🇧 英国-3x倍率",
+        "🇲🇾 马来西亚-3x倍率",
+        "🇹🇷 土耳其-5x倍率",
+        "🇦🇷 阿根廷-5x倍率",
+        "🇦🇺 澳洲-3x倍率"
+      ],
+      "interval": "10m",
+      "tolerance": 200
+    },
+    {
+      "tag": "🍃 延迟辅助",
+      "type": "urltest",
+      "outbounds": [
+        "🚀 默认代理",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🧠 AI",
+        "📹 YouTube",
+        "🍀 Google",
+        "👨‍💻 Github",
+        "📲 Telegram",
+        "🎵 TikTok",
+        "🎥 Netflix",
+        "💶 PayPal",
+        "🎮 Steam",
+        "🪟 Microsoft",
+        "🐬 OneDrive",
+        "🍏 Apple",
+        "🐠 漏网之鱼",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🍃 延迟辅助",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎯 全球直连",
+      "type": "direct"
+    },
+    {
+      "tag": "boostqz.com",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40000,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40001,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40002,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40003,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40004,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港05",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40005,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港06",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40006,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港07",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40007,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港08",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40008,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本01",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40031,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本02",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40032,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本03",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40033,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本04",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40034,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本05",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40035,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本06",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40036,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本07",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40037,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 日本08",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40038,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 台湾01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40021,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 台湾02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40022,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 台湾03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40023,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 台湾04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40024,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40011,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40012,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40013,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40014,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡05",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40015,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡06",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40016,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡07",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40017,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 新加坡08",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40018,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 美国01",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40041,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 美国02",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40042,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 美国03",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40043,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 美国04",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40044,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港09",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40009,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港010",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40010,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港011",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40101,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港012",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40102,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港013",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40103,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港014",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40104,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港015",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40105,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 香港016",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40106,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇬🇧 英国-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40051,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇲🇾 马来西亚-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40052,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇷 土耳其-5x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40053,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇦🇷 阿根廷-5x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40054,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇦🇺 澳洲-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40055,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "quic",
+          "dns"
+        ]
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "source_ip_cidr": [
+          "172.17.0.3/32"
+        ],
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "diy_direct",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "outbound": "📹 YouTube"
+      },
+      {
+        "rule_set": "geosite-google",
+        "outbound": "🍀 Google"
+      },
+      {
+        "domain_suffix": [
+          "ttcdn-us.com"
+        ],
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "🪟 Microsoft"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "outbound": "🍏 Apple"
+      },
+      {
+        "rule_set": "geosite-github",
+        "outbound": "👨‍💻 Github"
+      },
+      {
+        "rule_set": "geosite-ai",
+        "outbound": "🧠 AI"
+      },
+      {
+        "rule_set": "geosite-steamcn",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "geosite-steam",
+        "outbound": "🎮 Steam"
+      },
+      {
+        "rule_set": "geosite-onedrive",
+        "outbound": "🐬 OneDrive"
+      },
+      {
+        "rule_set": "geosite-netflix",
+        "outbound": "🎥 Netflix"
+      },
+      {
+        "rule_set": "geosite-paypal",
+        "outbound": "💶 PayPal"
+      },
+      {
+        "rule_set": "geosite-!cn",
+        "outbound": "🚀 默认代理"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "geoip-google",
+        "outbound": "🍀 Google"
+      },
+      {
+        "rule_set": "geoip-apple",
+        "outbound": "🍏 Apple"
+      },
+      {
+        "rule_set": "geoip-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geoip-netflix",
+        "outbound": "🎥 Netflix"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "🎯 全球直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "diy_direct",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/DIY_DIRECT.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-fakeipfilter",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-onedrive",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-tiktok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-paypal",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-steamcn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-steam",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs",
+        "download_detour": "🎯 全球直连"
+      }
+    ],
+    "final": "🐠 漏网之鱼",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "public"
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.31.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": false
+    },
+    {
+      "type": "mixed",
+      "listen": "0.0.0.0",
+      "listen_port": 7890
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "secret": "",
+      "default_mode": "rule"
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
