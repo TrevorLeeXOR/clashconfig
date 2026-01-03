@@ -861,14 +861,16 @@
         "outbound": "🎯 全球直连"
       },
       {
-        "source_ip_cidr": [
-          "172.17.0.3/32"
-        ],
+        "rule_set": "diy_direct",
         "outbound": "🎯 全球直连"
       },
       {
-        "rule_set": "diy_direct",
-        "outbound": "🎯 全球直连"
+        "rule_set": "banad",
+        "action": "reject"
+      },
+      {
+        "rule_set": "banprogramad",
+        "action": "reject"
       },
       {
         "clash_mode": "direct",
@@ -971,6 +973,20 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/DIY_DIRECT.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanAD.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banprogramad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanProgramAD.json",
         "download_detour": "🎯 全球直连"
       },
       {

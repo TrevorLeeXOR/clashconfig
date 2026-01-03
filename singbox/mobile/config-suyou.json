@@ -274,7 +274,6 @@
       "tag": "🇯🇵 日本手动",
       "type": "selector",
       "outbounds": [
-        "🇯🇵 日本08-F-三网优化",
         "🇯🇵 联通02-F-日本02",
         "🇯🇵 移动联通03-X-日本07",
         "🇯🇵 移动联通05-X-日本01",
@@ -306,7 +305,6 @@
       "type": "selector",
       "outbounds": [
         "🇰🇷 韩国01-F-三网优化",
-        "🇯🇵 日本08-F-三网优化",
         "🇨🇦 OVH高防加拿大🇨🇦",
         "🇺🇸 移动联通05-X-美国07",
         "🇺🇸 联通02-X-美国06",
@@ -335,7 +333,6 @@
       "type": "urltest",
       "outbounds": [
         "🇰🇷 韩国01-F-三网优化",
-        "🇯🇵 日本08-F-三网优化",
         "🇨🇦 OVH高防加拿大🇨🇦",
         "🇺🇸 移动联通05-X-美国07",
         "🇺🇸 联通02-X-美国06",
@@ -402,10 +399,10 @@
       "type": "direct"
     },
     {
-      "tag": "剩余流量：249.53 GB",
+      "tag": "剩余流量：249.22 GB",
       "type": "vless",
       "server": "61.111.247.246",
-      "server_port": 22892,
+      "server_port": 18913,
       "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
       "packet_encoding": "xudp",
       "flow": "xtls-rprx-vision",
@@ -428,7 +425,7 @@
       "tag": "套餐到期：长期有效",
       "type": "vless",
       "server": "61.111.247.246",
-      "server_port": 22892,
+      "server_port": 18913,
       "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
       "packet_encoding": "xudp",
       "flow": "xtls-rprx-vision",
@@ -451,7 +448,7 @@
       "tag": "🇰🇷 韩国01-F-三网优化",
       "type": "vless",
       "server": "61.111.247.246",
-      "server_port": 22892,
+      "server_port": 18913,
       "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
       "packet_encoding": "xudp",
       "flow": "xtls-rprx-vision",
@@ -467,54 +464,6 @@
           "enabled": true,
           "public_key": "blCSmxqswjGf_pYq7ita0fnjkTbQQKIPJEkSLFNYWyc",
           "short_id": "bf229119"
-        }
-      }
-    },
-    {
-      "tag": "🇯🇵 日本08-F-三网优化",
-      "type": "vless",
-      "server": "31.57.172.243",
-      "server_port": 24568,
-      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
-      "packet_encoding": "xudp",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "s0.awsstatic.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "0SovUzc6jym4Hfj_fSTyNhnrkb7O0s5wIBSOujWnaB4",
-          "short_id": "ce66398a"
-        }
-      }
-    },
-    {
-      "tag": "🇭🇰 香港05-CDN-免费",
-      "type": "vless",
-      "server": "cfcdn2.ecolyte.org",
-      "server_port": 443,
-      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
-      "packet_encoding": "xudp",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "insecure": true,
-        "server_name": "cfcdn2.ecolyte.org",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "cfcdn2.ecolyte.org"
         }
       }
     },
@@ -545,7 +494,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "cloudsync-prod.s3.amazonaws.com"
+        "server_name": "www.microsoft365.com"
       }
     },
     {
@@ -581,7 +530,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "fastly.cdn.steampipe.steamcontent.com"
+        "server_name": "www.microsoft365.com"
       }
     },
     {
@@ -593,7 +542,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe-partner.akamaized.net"
+        "server_name": "steampipe.akamaized.net"
       }
     },
     {
@@ -605,7 +554,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe.akamaized.net"
+        "server_name": "steampipe-kr.akamaized.net"
       }
     },
     {
@@ -617,7 +566,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "akamai.cdn.steampipe.steamcontent.com"
+        "server_name": "fastly.cdn.steampipe.steamcontent.com"
       }
     },
     {
@@ -629,7 +578,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "fastly.cdn.steampipe.steamcontent.com"
+        "server_name": "upos-hz-mirrorakam.akamaized.net"
       }
     },
     {
@@ -641,7 +590,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "fastly.cdn.steampipe.steamcontent.com"
+        "server_name": "akamai.cdn.steampipe.steamcontent.com"
       }
     },
     {
@@ -653,7 +602,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "origin-a.akamaihd.net"
+        "server_name": "steamcdn-a.akamaihd.net"
       }
     },
     {
@@ -665,7 +614,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe-partner.akamaized.net"
+        "server_name": "upos-hz-mirrorakam.akamaized.net"
       }
     },
     {
@@ -755,7 +704,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe-kr.akamaized.net"
+        "server_name": "akamai.cdn.steampipe.steamcontent.com"
       }
     },
     {
@@ -779,7 +728,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe-kr.akamaized.net"
+        "server_name": "edge.steam-dns.top.comcast.net"
       }
     },
     {
@@ -791,7 +740,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "upos-hz-mirrorakam.akamaized.net"
+        "server_name": "steampipe-kr.akamaized.net"
       }
     },
     {
@@ -803,7 +752,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "steampipe-partner.akamaized.net"
+        "server_name": "fastly.cdn.steampipe.steamcontent.com"
       }
     },
     {
@@ -815,7 +764,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "fastly.cdn.steampipe.steamcontent.com"
+        "server_name": "upos-hz-mirrorakam.akamaized.net"
       }
     },
     {
@@ -827,7 +776,7 @@
       "tls": {
         "enabled": true,
         "insecure": true,
-        "server_name": "www.microsoft365.com"
+        "server_name": "steampipe-partner.akamaized.net"
       }
     },
     {
@@ -900,14 +849,16 @@
         "outbound": "🎯 全球直连"
       },
       {
-        "source_ip_cidr": [
-          "172.17.0.3/32"
-        ],
+        "rule_set": "diy_direct",
         "outbound": "🎯 全球直连"
       },
       {
-        "rule_set": "diy_direct",
-        "outbound": "🎯 全球直连"
+        "rule_set": "banad",
+        "action": "reject"
+      },
+      {
+        "rule_set": "banprogramad",
+        "action": "reject"
       },
       {
         "clash_mode": "direct",
@@ -1010,6 +961,20 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/DIY_DIRECT.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanAD.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banprogramad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanProgramAD.json",
         "download_detour": "🎯 全球直连"
       },
       {
