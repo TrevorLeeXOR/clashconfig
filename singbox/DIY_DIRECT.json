@@ -2,7 +2,7 @@
     "version": 3,
     "rules": [
         {
-            "domian": [
+            "domain": [
                 "667dkdlskf.wkmds.top",
                 "mlvbdc.live.tlivesource.com"
             ],
@@ -58,4 +58,5 @@
             ]
         }
     ]
+
 }
