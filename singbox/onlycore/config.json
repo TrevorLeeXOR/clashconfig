@@ -50,7 +50,6 @@
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
-      {"source_ip_cidr": ["172.17.0.3/32"],"outbound": "🎯 全球直连"},
       {"rule_set": "diy_direct", "outbound": "🎯 全球直连"},
       {"rule_set": "banad", "action": "reject"},
       {"rule_set": "banprogramad", "action": "reject"},
