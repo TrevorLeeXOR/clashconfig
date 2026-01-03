@@ -2,7 +2,7 @@
     "version": 3,
     "rules": [
         {
-            "domian": [
+            "domain": [
                 "adsmind.apdcdn.tc.qq.com",
                 "adsmind.gdtimg.com",
                 "adsmind.tc.qq.com",
@@ -1028,4 +1028,5 @@
             ]
         }
     ]
+
 }
