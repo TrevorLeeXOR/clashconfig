@@ -54,6 +54,8 @@ DOMAIN-SUFFIX,tycyule887tycyl.com
 DOMAIN-SUFFIX,dhorywoczwec.com
 # newsnow docker
 DOMAIN-SUFFIX,busiyi.world
+# direct docker container
+SRC-IP-CIDR,172.21.0.0/16
 
 #EXAMPLE
 #DOMAIN-SUFFIX,google.com
