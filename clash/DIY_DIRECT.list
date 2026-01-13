@@ -27,6 +27,17 @@ DOMAIN-SUFFIX,huan.tv
 DOMAIN-SUFFIX,huan.aisee.tv
 DOMAIN-SUFFIX,shixunsuda.com
 DOMAIN-SUFFIX,appstorehuan.com
+# LEINIAO TV OTHER
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,youku.com
+DOMAIN-SUFFIX,cibntv.net
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,baidu.com
 # MISSAIYOUWEI
 DOMAIN-SUFFIX,wowstream.cloud
 DOMAIN-SUFFIX,wowstream2.cloud
