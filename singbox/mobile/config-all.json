@@ -1,0 +1,1982 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "local",
+        "type": "udp",
+        "server": "192.168.31.1"
+      },
+      {
+        "tag": "public",
+        "type": "https",
+        "server": "dns.alidns.com",
+        "domain_resolver": "local"
+      },
+      {
+        "tag": "foreign",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🚀 默认代理"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "clash_mode": "direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "global",
+        "server": "fakeip"
+      },
+      {
+        "query_type": "HTTPS",
+        "action": "reject"
+      },
+      {
+        "rule_set": "geosite-fakeipfilter",
+        "server": "local"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local"
+      }
+    ],
+    "final": "foreign",
+    "client_subnet": "223.5.5.0/24",
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {
+      "tag": "🚀 默认代理",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🔰 Gemini",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🧠 AI",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "📹 YouTube",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🍀 Google",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "👨‍💻 Github",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "📲 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎵 TikTok",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎥 Netflix",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "💶 PayPal",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎮 Steam",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🪟 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🐬 OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🍏 Apple",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🐠 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🇭🇰 香港手动",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 [BoostNet] 🇭🇰 香港01",
+        "🇭🇰 [BoostNet] 🇭🇰 香港010",
+        "🇭🇰 [BoostNet] 🇭🇰 香港011",
+        "🇭🇰 [BoostNet] 🇭🇰 香港012",
+        "🇭🇰 [BoostNet] 🇭🇰 香港013",
+        "🇭🇰 [BoostNet] 🇭🇰 香港014",
+        "🇭🇰 [BoostNet] 🇭🇰 香港015",
+        "🇭🇰 [BoostNet] 🇭🇰 香港016",
+        "🇭🇰 [BoostNet] 🇭🇰 香港02",
+        "🇭🇰 [BoostNet] 🇭🇰 香港03",
+        "🇭🇰 [BoostNet] 🇭🇰 香港04",
+        "🇭🇰 [BoostNet] 🇭🇰 香港05",
+        "🇭🇰 [BoostNet] 🇭🇰 香港06",
+        "🇭🇰 [BoostNet] 🇭🇰 香港07",
+        "🇭🇰 [BoostNet] 🇭🇰 香港08",
+        "🇭🇰 [BoostNet] 🇭🇰 香港09",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 01",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 02",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 03",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 04",
+        "🇭🇰 [速游] 移动联通03-X-香港01",
+        "🇭🇰 [速游] 移动联通03-X-香港02",
+        "🇭🇰 [速游] 移动联通03-X-香港04",
+        "🇭🇰 [速游] 移动联通05-F-香港04",
+        "🇭🇰 [速游] 移动联通05-X-香港05",
+        "🇭🇰 [速游] 联通02-X-香港09",
+        "🇭🇰 [速游] 🇭🇰香港08-F-直连"
+      ]
+    },
+    {
+      "tag": "🇯🇵 日本手动",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 [BoostNet] 🇯🇵 日本01",
+        "🇯🇵 [BoostNet] 🇯🇵 日本02",
+        "🇯🇵 [BoostNet] 🇯🇵 日本03",
+        "🇯🇵 [BoostNet] 🇯🇵 日本04",
+        "🇯🇵 [BoostNet] 🇯🇵 日本05",
+        "🇯🇵 [BoostNet] 🇯🇵 日本06",
+        "🇯🇵 [BoostNet] 🇯🇵 日本07",
+        "🇯🇵 [BoostNet] 🇯🇵 日本08",
+        "🇯🇵 [LLG] 🇯🇵Japan 01",
+        "🇯🇵 [LLG] 🇯🇵Japan 02",
+        "🇯🇵 [LLG] 🇯🇵Japan 03",
+        "🇯🇵 [LLG] 🇯🇵Japan 04",
+        "🇯🇵 [速游] 移动联通05-X-日本01",
+        "🇯🇵 [速游] 移动联通05-X-日本03",
+        "🇯🇵 [速游] 联通02-F-日本02",
+        "🇯🇵 [速游] 联通02-X-日本04",
+        "🇯🇵 [速游] 🇯🇵移动联通03-X-日本07"
+      ]
+    },
+    {
+      "tag": "🇸🇬 狮城手动",
+      "type": "selector",
+      "outbounds": [
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡01",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡02",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡03",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡04",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡05",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡06",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡07",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡08",
+        "🇸🇬 [LLG] 🇸🇬Singapore 01",
+        "🇸🇬 [LLG] 🇸🇬Singapore 02",
+        "🇸🇬 [LLG] 🇸🇬Singapore 03",
+        "🇸🇬 [LLG] 🇸🇬Singapore 04",
+        "🇸🇬 [速游] 移动联通05-X-新加坡03",
+        "🇸🇬 [速游] 联通02-F-新加坡05",
+        "🇸🇬 [速游] 联通02-X-新加坡04",
+        "🇸🇬 [速游] 🇸🇬移动联通03-X-新加坡06"
+      ]
+    },
+    {
+      "tag": "🇺🇲 美国手动",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸 [BoostNet] 🇺🇸 美国01",
+        "🇺🇸 [BoostNet] 🇺🇸 美国02",
+        "🇺🇸 [BoostNet] 🇺🇸 美国03",
+        "🇺🇸 [BoostNet] 🇺🇸 美国04",
+        "🇺🇸 [LLG] 🇺🇸United States 01",
+        "🇺🇸 [LLG] 🇺🇸United States 02",
+        "🇺🇸 [LLG] 🇺🇸United States 03",
+        "🇺🇸 [LLG] 🇺🇸United States 04",
+        "🇺🇸 [速游] 移动联通03-X-美国06",
+        "🇺🇸 [速游] 移动联通05-X-美国07",
+        "🇺🇸 [速游] 联通02-X-美国06"
+      ]
+    },
+    {
+      "tag": "🐸 手动选择",
+      "type": "selector",
+      "outbounds": [
+        "[BoostNet] boostqz.com",
+        "🇦🇷 [BoostNet] 🇦🇷 阿根廷-5x倍率",
+        "🇦🇺 [BoostNet] 🇦🇺 澳洲-3x倍率",
+        "🇬🇧 [BoostNet] 🇬🇧 英国-3x倍率",
+        "🇭🇰 [BoostNet] 🇭🇰 香港01",
+        "🇭🇰 [BoostNet] 🇭🇰 香港010",
+        "🇭🇰 [BoostNet] 🇭🇰 香港011",
+        "🇭🇰 [BoostNet] 🇭🇰 香港012",
+        "🇭🇰 [BoostNet] 🇭🇰 香港013",
+        "🇭🇰 [BoostNet] 🇭🇰 香港014",
+        "🇭🇰 [BoostNet] 🇭🇰 香港015",
+        "🇭🇰 [BoostNet] 🇭🇰 香港016",
+        "🇭🇰 [BoostNet] 🇭🇰 香港02",
+        "🇭🇰 [BoostNet] 🇭🇰 香港03",
+        "🇭🇰 [BoostNet] 🇭🇰 香港04",
+        "🇭🇰 [BoostNet] 🇭🇰 香港05",
+        "🇭🇰 [BoostNet] 🇭🇰 香港06",
+        "🇭🇰 [BoostNet] 🇭🇰 香港07",
+        "🇭🇰 [BoostNet] 🇭🇰 香港08",
+        "🇭🇰 [BoostNet] 🇭🇰 香港09",
+        "🇯🇵 [BoostNet] 🇯🇵 日本01",
+        "🇯🇵 [BoostNet] 🇯🇵 日本02",
+        "🇯🇵 [BoostNet] 🇯🇵 日本03",
+        "🇯🇵 [BoostNet] 🇯🇵 日本04",
+        "🇯🇵 [BoostNet] 🇯🇵 日本05",
+        "🇯🇵 [BoostNet] 🇯🇵 日本06",
+        "🇯🇵 [BoostNet] 🇯🇵 日本07",
+        "🇯🇵 [BoostNet] 🇯🇵 日本08",
+        "🇲🇾 [BoostNet] 🇲🇾 马来西亚-3x倍率",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡01",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡02",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡03",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡04",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡05",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡06",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡07",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡08",
+        "🇹🇷 [BoostNet] 🇹🇷 土耳其-5x倍率",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾01",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾02",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾03",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾04",
+        "🇺🇸 [BoostNet] 🇺🇸 美国01",
+        "🇺🇸 [BoostNet] 🇺🇸 美国02",
+        "🇺🇸 [BoostNet] 🇺🇸 美国03",
+        "🇺🇸 [BoostNet] 🇺🇸 美国04",
+        "[LLG] 未到期：2026-02-05",
+        "🇦🇶 [LLG] 🇦🇶Antarctica 01",
+        "🇦🇶 [LLG] 🇦🇶Antarctica 02",
+        "🇨🇦 [LLG] 🇨🇦Canada 01",
+        "🇨🇦 [LLG] 🇨🇦Canada 02",
+        "🇬🇧 [LLG] 🇬🇧United Kingdom 01",
+        "🇬🇧 [LLG] 🇬🇧United Kingdom 02",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 01",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 02",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 03",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 04",
+        "🇯🇵 [LLG] 🇯🇵Japan 01",
+        "🇯🇵 [LLG] 🇯🇵Japan 02",
+        "🇯🇵 [LLG] 🇯🇵Japan 03",
+        "🇯🇵 [LLG] 🇯🇵Japan 04",
+        "🇰🇷 [LLG] 🇰🇷Korea 01",
+        "🇰🇷 [LLG] 🇰🇷Korea 02",
+        "🇸🇬 [LLG] 🇸🇬Singapore 01",
+        "🇸🇬 [LLG] 🇸🇬Singapore 02",
+        "🇸🇬 [LLG] 🇸🇬Singapore 03",
+        "🇸🇬 [LLG] 🇸🇬Singapore 04",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 01",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 02",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 03",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 04",
+        "🇺🇸 [LLG] 🇺🇸United States 01",
+        "🇺🇸 [LLG] 🇺🇸United States 02",
+        "🇺🇸 [LLG] 🇺🇸United States 03",
+        "🇺🇸 [LLG] 🇺🇸United States 04",
+        "[速游] 测速直连",
+        "🇺🇸 [速游] 移动联通03-X-美国06",
+        "🇭🇰 [速游] 移动联通03-X-香港01",
+        "🇭🇰 [速游] 移动联通03-X-香港02",
+        "🇭🇰 [速游] 移动联通03-X-香港04",
+        "🇭🇰 [速游] 移动联通05-F-香港04",
+        "🇸🇬 [速游] 移动联通05-X-新加坡03",
+        "🇯🇵 [速游] 移动联通05-X-日本01",
+        "🇯🇵 [速游] 移动联通05-X-日本03",
+        "🇺🇸 [速游] 移动联通05-X-美国07",
+        "🇭🇰 [速游] 移动联通05-X-香港05",
+        "🇸🇬 [速游] 联通02-F-新加坡05",
+        "🇯🇵 [速游] 联通02-F-日本02",
+        "🇸🇬 [速游] 联通02-X-新加坡04",
+        "🇯🇵 [速游] 联通02-X-日本04",
+        "🇺🇸 [速游] 联通02-X-美国06",
+        "🇭🇰 [速游] 联通02-X-香港09",
+        "🇰🇷 [速游] 韩国01-F-三网优化",
+        "🇭🇰 [速游] 🇭🇰香港08-F-直连",
+        "🇯🇵 [速游] 🇯🇵移动联通03-X-日本07",
+        "🇸🇬 [速游] 🇸🇬移动联通03-X-新加坡06"
+      ]
+    },
+    {
+      "tag": "♻️ 自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "[BoostNet] boostqz.com",
+        "🇦🇷 [BoostNet] 🇦🇷 阿根廷-5x倍率",
+        "🇦🇺 [BoostNet] 🇦🇺 澳洲-3x倍率",
+        "🇬🇧 [BoostNet] 🇬🇧 英国-3x倍率",
+        "🇭🇰 [BoostNet] 🇭🇰 香港01",
+        "🇭🇰 [BoostNet] 🇭🇰 香港010",
+        "🇭🇰 [BoostNet] 🇭🇰 香港011",
+        "🇭🇰 [BoostNet] 🇭🇰 香港012",
+        "🇭🇰 [BoostNet] 🇭🇰 香港013",
+        "🇭🇰 [BoostNet] 🇭🇰 香港014",
+        "🇭🇰 [BoostNet] 🇭🇰 香港015",
+        "🇭🇰 [BoostNet] 🇭🇰 香港016",
+        "🇭🇰 [BoostNet] 🇭🇰 香港02",
+        "🇭🇰 [BoostNet] 🇭🇰 香港03",
+        "🇭🇰 [BoostNet] 🇭🇰 香港04",
+        "🇭🇰 [BoostNet] 🇭🇰 香港05",
+        "🇭🇰 [BoostNet] 🇭🇰 香港06",
+        "🇭🇰 [BoostNet] 🇭🇰 香港07",
+        "🇭🇰 [BoostNet] 🇭🇰 香港08",
+        "🇭🇰 [BoostNet] 🇭🇰 香港09",
+        "🇯🇵 [BoostNet] 🇯🇵 日本01",
+        "🇯🇵 [BoostNet] 🇯🇵 日本02",
+        "🇯🇵 [BoostNet] 🇯🇵 日本03",
+        "🇯🇵 [BoostNet] 🇯🇵 日本04",
+        "🇯🇵 [BoostNet] 🇯🇵 日本05",
+        "🇯🇵 [BoostNet] 🇯🇵 日本06",
+        "🇯🇵 [BoostNet] 🇯🇵 日本07",
+        "🇯🇵 [BoostNet] 🇯🇵 日本08",
+        "🇲🇾 [BoostNet] 🇲🇾 马来西亚-3x倍率",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡01",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡02",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡03",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡04",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡05",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡06",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡07",
+        "🇸🇬 [BoostNet] 🇸🇬 新加坡08",
+        "🇹🇷 [BoostNet] 🇹🇷 土耳其-5x倍率",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾01",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾02",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾03",
+        "🇹🇼 [BoostNet] 🇹🇼 台湾04",
+        "🇺🇸 [BoostNet] 🇺🇸 美国01",
+        "🇺🇸 [BoostNet] 🇺🇸 美国02",
+        "🇺🇸 [BoostNet] 🇺🇸 美国03",
+        "🇺🇸 [BoostNet] 🇺🇸 美国04",
+        "[LLG] 未到期：2026-02-05",
+        "🇦🇶 [LLG] 🇦🇶Antarctica 01",
+        "🇦🇶 [LLG] 🇦🇶Antarctica 02",
+        "🇨🇦 [LLG] 🇨🇦Canada 01",
+        "🇨🇦 [LLG] 🇨🇦Canada 02",
+        "🇬🇧 [LLG] 🇬🇧United Kingdom 01",
+        "🇬🇧 [LLG] 🇬🇧United Kingdom 02",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 01",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 02",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 03",
+        "🇭🇰 [LLG] 🇭🇰Hong Kong 04",
+        "🇯🇵 [LLG] 🇯🇵Japan 01",
+        "🇯🇵 [LLG] 🇯🇵Japan 02",
+        "🇯🇵 [LLG] 🇯🇵Japan 03",
+        "🇯🇵 [LLG] 🇯🇵Japan 04",
+        "🇰🇷 [LLG] 🇰🇷Korea 01",
+        "🇰🇷 [LLG] 🇰🇷Korea 02",
+        "🇸🇬 [LLG] 🇸🇬Singapore 01",
+        "🇸🇬 [LLG] 🇸🇬Singapore 02",
+        "🇸🇬 [LLG] 🇸🇬Singapore 03",
+        "🇸🇬 [LLG] 🇸🇬Singapore 04",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 01",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 02",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 03",
+        "🇹🇼 [LLG] 🇹🇼Taiwan 04",
+        "🇺🇸 [LLG] 🇺🇸United States 01",
+        "🇺🇸 [LLG] 🇺🇸United States 02",
+        "🇺🇸 [LLG] 🇺🇸United States 03",
+        "🇺🇸 [LLG] 🇺🇸United States 04",
+        "[速游] 测速直连",
+        "🇺🇸 [速游] 移动联通03-X-美国06",
+        "🇭🇰 [速游] 移动联通03-X-香港01",
+        "🇭🇰 [速游] 移动联通03-X-香港02",
+        "🇭🇰 [速游] 移动联通03-X-香港04",
+        "🇭🇰 [速游] 移动联通05-F-香港04",
+        "🇸🇬 [速游] 移动联通05-X-新加坡03",
+        "🇯🇵 [速游] 移动联通05-X-日本01",
+        "🇯🇵 [速游] 移动联通05-X-日本03",
+        "🇺🇸 [速游] 移动联通05-X-美国07",
+        "🇭🇰 [速游] 移动联通05-X-香港05",
+        "🇸🇬 [速游] 联通02-F-新加坡05",
+        "🇯🇵 [速游] 联通02-F-日本02",
+        "🇸🇬 [速游] 联通02-X-新加坡04",
+        "🇯🇵 [速游] 联通02-X-日本04",
+        "🇺🇸 [速游] 联通02-X-美国06",
+        "🇭🇰 [速游] 联通02-X-香港09",
+        "🇰🇷 [速游] 韩国01-F-三网优化",
+        "🇭🇰 [速游] 🇭🇰香港08-F-直连",
+        "🇯🇵 [速游] 🇯🇵移动联通03-X-日本07",
+        "🇸🇬 [速游] 🇸🇬移动联通03-X-新加坡06"
+      ],
+      "interval": "10m",
+      "tolerance": 200
+    },
+    {
+      "tag": "🍃 延迟辅助",
+      "type": "urltest",
+      "outbounds": [
+        "🚀 默认代理",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🔰 Gemini",
+        "🧠 AI",
+        "📹 YouTube",
+        "🍀 Google",
+        "👨‍💻 Github",
+        "📲 Telegram",
+        "🎵 TikTok",
+        "🎥 Netflix",
+        "💶 PayPal",
+        "🎮 Steam",
+        "🪟 Microsoft",
+        "🐬 OneDrive",
+        "🍏 Apple",
+        "🐠 漏网之鱼",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🍃 延迟辅助",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "🎯 全球直连",
+      "type": "direct"
+    },
+    {
+      "tag": "[BoostNet] boostqz.com",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40000,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇦🇷 [BoostNet] 🇦🇷 阿根廷-5x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40054,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇦🇺 [BoostNet] 🇦🇺 澳洲-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40055,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇬🇧 [BoostNet] 🇬🇧 英国-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40051,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40001,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港010",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40010,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港011",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40101,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港012",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40102,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港013",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40103,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港014",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40104,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港015",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40105,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港016",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40106,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40002,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40003,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40004,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港05",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40005,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港06",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40006,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港07",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40007,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港08",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40008,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇭🇰 [BoostNet] 🇭🇰 香港09",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40009,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本01",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40031,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本02",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40032,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本03",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40033,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本04",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40034,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本05",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40035,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本06",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40036,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本07",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40037,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇯🇵 [BoostNet] 🇯🇵 日本08",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40038,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇲🇾 [BoostNet] 🇲🇾 马来西亚-3x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40052,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40011,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40012,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40013,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40014,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡05",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40015,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡06",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40016,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡07",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40017,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇸🇬 [BoostNet] 🇸🇬 新加坡08",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40018,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇷 [BoostNet] 🇹🇷 土耳其-5x倍率",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40053,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 [BoostNet] 🇹🇼 台湾01",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40021,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 [BoostNet] 🇹🇼 台湾02",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40022,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 [BoostNet] 🇹🇼 台湾03",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40023,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇹🇼 [BoostNet] 🇹🇼 台湾04",
+      "type": "shadowsocks",
+      "server": "boostdyz1.pncnj.cn",
+      "server_port": 40024,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 [BoostNet] 🇺🇸 美国01",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40041,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 [BoostNet] 🇺🇸 美国02",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40042,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 [BoostNet] 🇺🇸 美国03",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40043,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "🇺🇸 [BoostNet] 🇺🇸 美国04",
+      "type": "shadowsocks",
+      "server": "boostdyz2.pncnj.cn",
+      "server_port": 40044,
+      "method": "chacha20-ietf-poly1305",
+      "password": "88f5cea5-dc19-4213-aee8-93e618b92a7c"
+    },
+    {
+      "tag": "[LLG] 剩余流量：150 GB",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24784,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "[LLG] 未到期：2026-02-05",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24784,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇺🇸 [LLG] 美国免费[ipv6]",
+      "type": "vless",
+      "server": "2605:6400:20:337:4b2f:2186:32c7:591f",
+      "server_port": 443,
+      "uuid": "4b051cad-1ba9-4436-be3f-f28e8fce2a3e",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.archive.ubuntu.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "IDKfxFjmVdUwLZJazMqqJZabKPGhxwNhp1sOPKvHqwo",
+          "short_id": "758c70f9"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "🇦🇶 [LLG] 🇦🇶Antarctica 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24797,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇦🇶 [LLG] 🇦🇶Antarctica 02",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14799,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇨🇦 [LLG] 🇨🇦Canada 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24796,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇨🇦 [LLG] 🇨🇦Canada 02",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14798,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇬🇧 [LLG] 🇬🇧United Kingdom 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 27830,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇬🇧 [LLG] 🇬🇧United Kingdom 02",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 17831,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇭🇰 [LLG] 🇭🇰Hong Kong 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24784,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇭🇰 [LLG] 🇭🇰Hong Kong 02",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24785,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇭🇰 [LLG] 🇭🇰Hong Kong 03",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14787,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇭🇰 [LLG] 🇭🇰Hong Kong 04",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14788,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇯🇵 [LLG] 🇯🇵Japan 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24791,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇯🇵 [LLG] 🇯🇵Japan 02",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24792,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇯🇵 [LLG] 🇯🇵Japan 03",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14791,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇯🇵 [LLG] 🇯🇵Japan 04",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14792,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇰🇷 [LLG] 🇰🇷Korea 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24794,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇰🇷 [LLG] 🇰🇷Korea 02",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14797,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇸🇬 [LLG] 🇸🇬Singapore 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24789,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇸🇬 [LLG] 🇸🇬Singapore 02",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24795,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇸🇬 [LLG] 🇸🇬Singapore 03",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14795,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇸🇬 [LLG] 🇸🇬Singapore 04",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14796,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇹🇼 [LLG] 🇹🇼Taiwan 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24786,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇹🇼 [LLG] 🇹🇼Taiwan 02",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24790,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇹🇼 [LLG] 🇹🇼Taiwan 03",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14789,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇹🇼 [LLG] 🇹🇼Taiwan 04",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14790,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇺🇸 [LLG] 🇺🇸United States 01",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24787,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇺🇸 [LLG] 🇺🇸United States 02",
+      "type": "shadowsocks",
+      "server": "drtnmjjhu.swmixx.cn",
+      "server_port": 24793,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇺🇸 [LLG] 🇺🇸United States 03",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14793,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "🇺🇸 [LLG] 🇺🇸United States 04",
+      "type": "shadowsocks",
+      "server": "sdtfrmnju.bgubvg.cn",
+      "server_port": 14794,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "MjdlZmY4YWIyZDU0OGNkNw==:NGIwNTFjYWQtMWJhOS00NA=="
+    },
+    {
+      "tag": "[速游] 剩余流量：249.21 GB",
+      "type": "vless",
+      "server": "61.111.247.246",
+      "server_port": 31372,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "blCSmxqswjGf_pYq7ita0fnjkTbQQKIPJEkSLFNYWyc",
+          "short_id": "bf229119"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "[速游] 套餐到期：长期有效",
+      "type": "vless",
+      "server": "61.111.247.246",
+      "server_port": 31372,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "blCSmxqswjGf_pYq7ita0fnjkTbQQKIPJEkSLFNYWyc",
+          "short_id": "bf229119"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "[速游] 测速直连",
+      "type": "hysteria2",
+      "server": "103.219.192.139",
+      "server_port": 16789,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇺🇸 [速游] 移动联通03-X-美国06",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 59428,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastly.cdn.steampipe.steamcontent.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 移动联通03-X-香港01",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 7892,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-partner.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 移动联通03-X-香港02",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 9428,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.microsoft365.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 移动联通03-X-香港04",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 9422,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 移动联通05-F-香港04",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 23420,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastly.cdn.steampipe.steamcontent.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 [速游] 移动联通05-X-新加坡03",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 51473,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-partner.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 [速游] 移动联通05-X-日本01",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 22631,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "upos-hz-mirrorakam.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 [速游] 移动联通05-X-日本03",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 8332,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-kr.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇺🇸 [速游] 移动联通05-X-美国07",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 11364,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 移动联通05-X-香港05",
+      "type": "trojan",
+      "server": "120.240.118.202",
+      "server_port": 43192,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastly.cdn.steampipe.steamcontent.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 [速游] 联通02-F-新加坡05",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 27426,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-partner.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 [速游] 联通02-F-日本02",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 21238,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "akamai.cdn.steampipe.steamcontent.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 [速游] 联通02-X-新加坡04",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 17591,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-partner.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇯🇵 [速游] 联通02-X-日本04",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 9232,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇺🇸 [速游] 联通02-X-美国06",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 17560,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastly.cdn.steampipe.steamcontent.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 联通02-X-香港09",
+      "type": "trojan",
+      "server": "58.19.23.84",
+      "server_port": 45807,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "steampipe-partner.akamaized.net",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇰🇷 [速游] 韩国01-F-三网优化",
+      "type": "vless",
+      "server": "61.111.247.246",
+      "server_port": 31372,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "blCSmxqswjGf_pYq7ita0fnjkTbQQKIPJEkSLFNYWyc",
+          "short_id": "bf229119"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "🇭🇰 [速游] 香港01-CDN电信优选-免费",
+      "type": "vmess",
+      "server": "104.18.43.72",
+      "server_port": 443,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "cfcdn.ecolyte.org",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "cfcdn.ecolyte.org"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 香港01-CDN移动优选-免费",
+      "type": "vmess",
+      "server": "104.18.88.59",
+      "server_port": 443,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "cfcdn.ecolyte.org",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "cfcdn.ecolyte.org"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 香港01-CDN联通优选-免费",
+      "type": "vmess",
+      "server": "172.67.77.213",
+      "server_port": 443,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "cfcdn.ecolyte.org",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "cfcdn.ecolyte.org"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "tag": "🇭🇰 [速游] 🇭🇰香港08-F-直连",
+      "type": "vless",
+      "server": "103.219.195.65",
+      "server_port": 5678,
+      "uuid": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "KkGg7y5e2Ry7hEJqMbOFU-2Ib1X3D2SnhGXSkYwHrlU",
+          "short_id": "d978f539"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "🇯🇵 [速游] 🇯🇵移动联通03-X-日本07",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 8239,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloudsync-prod.s3.amazonaws.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "🇸🇬 [速游] 🇸🇬移动联通03-X-新加坡06",
+      "type": "trojan",
+      "server": "ddyd500lfdd3fs.cnbaidu.org",
+      "server_port": 36446,
+      "password": "43fdfa17-dbdd-4eae-9657-b25499cb0878",
+      "tls": {
+        "enabled": true,
+        "server_name": "upos-hz-mirrorakam.akamaized.net",
+        "insecure": true
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "quic",
+          "dns"
+        ]
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "diy_direct",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "banad",
+        "action": "reject"
+      },
+      {
+        "rule_set": "banprogramad",
+        "action": "reject"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": "geosite-gemini",
+        "outbound": "🔰 Gemini"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "outbound": "📹 YouTube"
+      },
+      {
+        "rule_set": "geosite-google",
+        "outbound": "🍀 Google"
+      },
+      {
+        "domain_suffix": [
+          "ttcdn-us.com"
+        ],
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "🪟 Microsoft"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "outbound": "🍏 Apple"
+      },
+      {
+        "rule_set": "geosite-github",
+        "outbound": "👨‍💻 Github"
+      },
+      {
+        "rule_set": "geosite-ai",
+        "outbound": "🧠 AI"
+      },
+      {
+        "rule_set": "geosite-steamcn",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "geosite-steam",
+        "outbound": "🎮 Steam"
+      },
+      {
+        "rule_set": "geosite-onedrive",
+        "outbound": "🐬 OneDrive"
+      },
+      {
+        "rule_set": "geosite-netflix",
+        "outbound": "🎥 Netflix"
+      },
+      {
+        "rule_set": "geosite-paypal",
+        "outbound": "💶 PayPal"
+      },
+      {
+        "rule_set": "geosite-!cn",
+        "outbound": "🚀 默认代理"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "geoip-google",
+        "outbound": "🍀 Google"
+      },
+      {
+        "rule_set": "geoip-apple",
+        "outbound": "🍏 Apple"
+      },
+      {
+        "rule_set": "geoip-telegram",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "geoip-netflix",
+        "outbound": "🎥 Netflix"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "🎯 全球直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "diy_direct",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/DIY_DIRECT.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanAD.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "banprogramad",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TrevorLeeXOR/config/refs/heads/main/singbox/BanProgramAD.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-fakeipfilter",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-gemini",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-onedrive",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-tiktok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-paypal",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-steamcn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-steam",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs",
+        "download_detour": "🎯 全球直连"
+      }
+    ],
+    "final": "🐠 漏网之鱼",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "public"
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.31.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": false
+    },
+    {
+      "type": "mixed",
+      "listen": "0.0.0.0",
+      "listen_port": 7890
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "secret": "",
+      "default_mode": "rule"
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}

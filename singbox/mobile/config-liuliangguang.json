@@ -76,6 +76,20 @@
       ]
     },
     {
+      "tag": "🔰 Gemini",
+      "type": "selector",
+      "outbounds": [
+        "🚀 默认代理",
+        "🇭🇰 香港手动",
+        "🇺🇲 美国手动",
+        "🇸🇬 狮城手动",
+        "🇯🇵 日本手动",
+        "🐸 手动选择",
+        "♻️ 自动选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
       "tag": "🧠 AI",
       "type": "selector",
       "outbounds": [
@@ -382,6 +396,7 @@
       "type": "selector",
       "outbounds": [
         "🚀 默认代理",
+        "🔰 Gemini",
         "🧠 AI",
         "📹 YouTube",
         "🍀 Google",
@@ -730,6 +745,10 @@
         "outbound": "GLOBAL"
       },
       {
+        "rule_set": "geosite-gemini",
+        "outbound": "🔰 Gemini"
+      },
+      {
         "rule_set": "geosite-youtube",
         "outbound": "📹 YouTube"
       },
@@ -843,6 +862,13 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "geosite-gemini",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs",
         "download_detour": "🎯 全球直连"
       },
       {
