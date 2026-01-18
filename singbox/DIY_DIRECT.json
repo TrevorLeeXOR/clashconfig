@@ -61,7 +61,8 @@
         "busiyi.world"
       ],
       "domain_keyword": [
-        "wowstream"
+        "wowstream",
+        "bygcloud"
       ],
       "ip_cidr": [
         "18.143.17.0/24"
